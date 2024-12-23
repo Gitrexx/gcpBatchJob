@@ -1,0 +1,5 @@
+import os
+
+
+if __name__ == "__main__":
+    print("this is a demo gcp batch job")

@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/gcpbatchjob/$BRANCH_NAME:latest', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/gcpbatchjob/$BRANCH_NAME:latest']
+
+images:
+  - 'gcr.io/$PROJECT_ID/gcpbatchjob/$BRANCH_NAME:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
